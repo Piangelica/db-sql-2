@@ -10,3 +10,10 @@ GROUP BY exam_id;
 SELECT COUNT(name), department_id  FROM degrees GROUP BY department_id
 2.Contare gli insegnanti che hanno l'ufficio nello stesso edifico
 SELECT COUNT(teachers.name), office_address FROM teachers GROUP BY office_address
+JOIN
+1.Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+SELECT students.name, students.surname, degrees.name
+FROM students
+JOIN degrees ON degrees.id=students.degree_id
+
+WHERE degrees.name='Corso di Laurea in Economia'
